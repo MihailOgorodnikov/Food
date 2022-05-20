@@ -130,7 +130,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const modalTimerId = setInterval(openModal, 5000);
+   // const modalTimerId = setInterval(openModal, 5000);
 
     function showModalByScroll() {
         if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
@@ -240,15 +240,28 @@ window.addEventListener('DOMContentLoaded', () => {
             const request = new XMLHttpRequest();
             request.open('POST', 'server.php');
 
-            request.setRequestHeader('Content-type', 'multipart/form-data');
+            request.setRequestHeader('Content-type', 'application/json');
             const formData = new FormData(form);
 
-            request.send(formData);
+            const object = {};
+
+            formData.forEach(function(value, key){
+                object[key] = value;
+            });
+
+            const json = JSON.stringify(object);
+
+
+            request.send(json);
 
             request.addEventListener('load', () => {
                 if (request.status === 200) {
                     console.log(request.response);
                     statusMessege.textContent = messege.success;
+                    form.reset();
+                    setTimeout(() =>{
+                        statusMessege.remove();
+                    }, 2000);
                 } else{
                     statusMessege.textContent = messege.failure;
                 }
