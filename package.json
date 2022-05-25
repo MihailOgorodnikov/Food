@@ -1,0 +1,22 @@
+{
+  "name": "003-food-dist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MihailOgorodnikov/Food.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MihailOgorodnikov/Food/issues"
+  },
+  "homepage": "https://github.com/MihailOgorodnikov/Food#readme",
+  "devDependencies": {
+    "json-server": "^0.17.0"
+  }
+}
