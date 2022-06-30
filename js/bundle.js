@@ -615,7 +615,7 @@ module.exports = tabs;
 /***/ ((module) => {
 
 function timer () {
-    const deadline = '2022-06-20';
+    const deadline = '2022-07-20';
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
